@@ -1,0 +1,170 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    font-family: 'roboto', helvetica, sans-serif;
+    font-weight: 800;
+    background-color: #1d2636;
+
+}
+
+.logo {
+    color: rgb(255, 255, 221);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.navlinks {
+    font-size: 22px;
+    display: flex;
+    justify-content: space-around;
+    width: 32%;
+}
+
+.navlinks li {
+    list-style: none;
+}
+
+
+.navlinks a {
+    color: rgba(255, 255, 221, 0.822);
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.navlinks a:hover{
+    color: rgba(255, 255, 221);
+    transition: ease .3s;
+}
+
+/* burger style */
+
+.burger{
+    display: none;
+    text-align: center;
+}
+
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color: rgb(255, 255, 221);
+    margin: 5px;
+    transition: all 0.15s ease;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.burger .line2 {
+    width: 30px;
+}
+
+
+
+/* nav width response*/
+
+@media screen and (max-width:1350px) {
+    .navlinks {
+        font-size: 22px;
+        display: flex;
+        justify-content: space-around;
+        width: 40%;
+    }
+
+
+    
+}
+
+@media screen and (max-width:1080px) {
+    .navlinks {
+        font-size: 22px;
+        display: flex;
+        justify-content: space-around;
+        width: 50%;
+    }
+    
+}
+@media screen and (max-width:900px) {
+    .navlinks {
+        font-size: 22px;
+        display: flex;
+        justify-content: space-around;
+        width: 60%;
+    }
+    
+}
+
+@media screen and (max-width:768px) {
+    body {
+        overflow-x: hidden;
+    }
+    .navlinks{
+        position: absolute;
+         right: 0px;
+         height: 92vh;
+         top: 8vh;
+         background-color: #1d2636;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         width: 50%;
+         transform: translateX(100%);
+         transition: transform 0.2s ease;
+    }
+    .navlinks li {
+        opacity: 0;
+    }
+
+    .burger{
+        display: block;
+        cursor: pointer;
+    }
+
+    .navlinks a {
+        color: rgb(255, 255, 221);
+
+    }
+
+
+}
+
+.nav-active{
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+
+    }
+
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+/* burger animations */
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+
+.toggle .line2{
+    opacity: 0;
+}
+
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
